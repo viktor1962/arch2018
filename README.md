@@ -17,11 +17,11 @@ Consists of 3 parts.
 Video demonstration of the script https://www.youtube.com/watch?v=nvVF_qKDUeM
 
 # Installation
-
-wget https://github.com/viktor1962/arch2018/archive/master.zip
-
-         pacman -Sy zip unzip && unzip master.zip
-0) Редактировать nano arch1.sh 
+         pacman -Sy git wget
+        git clone https://github.com/viktor1962/arch2018
+        cd /root/arch2018
+ Прочитать:  nano README.md       
+ Редактировать: nano arch1.sh
 
    Если переустановка системы, то удалить-Закомментировать # о форматированиии: #mkfs.ext4  /dev/sda4 -L home
                      Оставить это:

@@ -17,6 +17,40 @@ Consists of 3 parts.
 Video demonstration of the script https://www.youtube.com/watch?v=nvVF_qKDUeM
 
 # Installation
+
+wget https://github.com/viktor1962/arch2018/archive/master.zip
+
+         pacman -Sy zip unzip && unzip master.zip
+0) Редактировать nano arch1.sh 
+
+   Если переустановка системы, то удалить-Закоммить ## Всё о форматированиии и монтировании home! HOME нельзя монтировать!
+                     Оставить это ТОЛЬКО:
+   
+echo '1 язык'   
+loadkeys ru
+
+echo '2 шрифт'
+setfont cyr-sun16
+
+echo '2.1 Монтирование дисков'
+mount /dev/sda2 /mnt
+mount /dev/sda1 /mnt/boot
+swapon /dev/sda3
+
+echo '3.1 Выбор зеркал для загрузки. Ставим зеркало от Яндекс'
+echo "Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
+
+echo '3.2 Установка основных пакетов'
+pacstrap /mnt base base-devel
+
+echo '3.3 Настройка системы'
+genfstab -pU /mnt >> /mnt/etc/fstab
+
+arch-chroot /mnt sh -c "$(curl -fsSL git.io/arch2.sh)"
+
+
+
+
 1) Download and burn the Arch Linux ISO image on a USB flash drive https://www.archlinux.org/download/
 2) Download and run the script with the command:
 

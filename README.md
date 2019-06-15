@@ -23,8 +23,8 @@ Video demonstration of the script https://www.youtube.com/watch?v=nvVF_qKDUeM
  Прочитать:  nano README.md       
  Редактировать: nano arch1.sh
 
-   Если переустановка системы, то удалить-Закомментировать # о форматированиии: #mkfs.ext4  /dev/sda4 -L home
-                     Оставить это:
+   Если переустановка системы с сохранением домашней папки HOME, то удалить-Закомментировать # о форматированиии: #mkfs.ext4  /dev/sda4 -L home
+                     Оставить только это:
    
 echo '1 язык'   
 loadkeys ru
